@@ -1,0 +1,23 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test {
+		public static void main(String[] args) {
+				System.out.println(f());
+				}
+			
+			public static String f() {
+				Scanner sc= new Scanner(System.in);
+				int a=0;
+				a=sc.nextInt();
+				if(a%2==1) {
+
+					return "odd";	
+				}else {
+
+					return "even";	
+				}
+			}
+	
+}

@@ -1,0 +1,21 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String input = "";
+		int c=0;
+		input = sc.next();
+		if(input.length()==4) {
+			c=input.charAt(1)-48;
+			System.out.println(c);
+		}else if(input.length()==5) {
+			
+		}else if(input.length()==6) {
+			
+		}
+		
+	}
+}

@@ -1,0 +1,25 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		abs();
+	}
+
+	public static void abs() {
+		Scanner sc = new Scanner(System.in);
+		long a = 0;
+		String num="";
+		num = sc.next();
+		a=Integer.parseInt(num);
+		if(a>0) {
+			System.out.println(a);
+		}else if(a==0){
+			System.out.println(0);
+		}else{
+			System.out.println(-a);
+		}
+	}
+
+}

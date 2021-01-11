@@ -1,0 +1,40 @@
+static
+	정적 변수
+	static 키워드가 붙은 것들(변수, 메소드, 블럭, ...)은
+	메모리에 가장 먼저 올라간다.
+	따라서 static 메소드 내부에서는 일반 전역변수 사용 불가.
+	static메소드 내부에서는 static 전역변수 사용 가능
+
+	*모든 객체가 공유한다.*
+class A{
+	static int data =10;
+}
+Class Main{
+	public static void main(String[] args){
+		A a1 = new A();
+		A a2 = new A();
+		a1.data = 20;
+		syso(a2.data);  -->20
+	}
+}
+
+접근 권한 제어자
+	다른 패키지 혹은 다른 패키지에서 필드에 접근할 수 있는 권한을
+	제어해주는 키워드
+	private변수는 접근하기 위해 getter, setter를 사용한다.
+
+	public		: 모든 곳에서 접근 가능
+	private		: 모든 곳에서 접근 불가
+	protected	: 자식에서만 접근 가능
+
+	(default)	: 다른 패키지에서 접근 불가
+
+
+
+
+
+
+
+
+
+

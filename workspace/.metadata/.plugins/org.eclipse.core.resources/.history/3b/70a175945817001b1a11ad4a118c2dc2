@@ -1,0 +1,18 @@
+package test;
+import java.util.Scanner;
+public class Test {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String a;//a=97
+		int b=97;
+		a=sc.next();
+		while (true) {
+			System.out.println((char)b);
+			b++;
+			if((int)(a.charAt(0))==b) {
+				System.out.println((char)b);
+				break;
+			}
+		}
+	}
+}

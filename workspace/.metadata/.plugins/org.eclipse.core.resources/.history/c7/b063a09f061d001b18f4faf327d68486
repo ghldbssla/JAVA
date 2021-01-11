@@ -1,0 +1,24 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		abs();
+	}
+
+	public static void abs() {
+		Scanner sc = new Scanner(System.in);
+
+		int a = 0;
+		long b = 0;
+		a = sc.nextInt();
+		for (int i = 1; i <= a; i++) {
+			if(a%i==0) {
+				b+=1;
+			}
+		}
+		System.out.println(b);
+	}
+
+}

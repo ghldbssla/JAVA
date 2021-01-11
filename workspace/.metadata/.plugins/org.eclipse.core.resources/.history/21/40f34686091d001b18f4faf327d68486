@@ -1,0 +1,28 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		abs();
+	}
+
+	public static void abs() {
+		Scanner sc = new Scanner(System.in);
+
+		int a = 0;
+		int b = 0;
+
+		a=sc.nextInt();
+		b=sc.nextInt();
+		
+		for (int i = (a+b)/2; i >0; i--) {
+			if(a%i==0&&b%i==0) {
+				System.out.println(i);
+				break;
+			}
+		}
+		
+	}
+
+}

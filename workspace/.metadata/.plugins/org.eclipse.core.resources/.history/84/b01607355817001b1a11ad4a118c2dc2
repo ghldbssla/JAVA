@@ -1,0 +1,17 @@
+package test;
+import java.util.Scanner;
+public class Test {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a;
+		
+		a=sc.nextInt();
+		while (true) {
+			if(a>0) {
+			System.out.println(a-1);
+			a--;
+			}
+			else {break;}
+		}
+	}
+}

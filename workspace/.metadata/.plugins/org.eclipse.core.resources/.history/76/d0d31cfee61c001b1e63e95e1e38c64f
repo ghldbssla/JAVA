@@ -1,0 +1,14 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test {
+		public static void main(String[] args) {
+				System.out.println(f(3));
+				}
+			
+			public static int f(int x) {
+				return x*2+1;	
+			}
+	
+}

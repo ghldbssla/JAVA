@@ -1,0 +1,16 @@
+파일 입출력
+	Writer (입력)
+		BufferedWriter : 버퍼를 이용해서 파일 작성
+		FileWriter : 경로에 있는 파일 가져오기
+		*파일이 없으면 자동으로 만들어진다.
+	Reader (출력)
+		BufferedReader : 버퍼를 이용해서 파일 읽기
+		FileReader : 경로에 있는 파일 가져오기
+		*파일이 없으면 예외 발생
+FileWriter
+	new FileWriter("파일경로",추가여부)
+
+BufferedWriter
+	BufferedWriter bw = new BufferedWriter(FileWriter객체);
+	bw.write("입력할 문자열");
+ 	bw.close(); // 버퍼를 닫으면서 파일에 적용

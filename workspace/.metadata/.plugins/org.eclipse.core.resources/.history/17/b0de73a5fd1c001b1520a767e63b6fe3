@@ -1,0 +1,23 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test {
+		public static void main(String[] args) {
+				System.out.println(f());
+				}
+			
+			public static float f() {
+				Scanner sc= new Scanner(System.in);
+				int a=0;
+				a=sc.nextInt();
+				if(a==1) {
+
+					return "hello";	
+				}else {
+
+					return "world";	
+				}
+			}
+	
+}

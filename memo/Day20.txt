@@ -1,0 +1,78 @@
+자바 GUI ( 그래픽 유저 인터페이스 )
+
+장점 : 프로그램을 바로 만들어 구현할수 있다.
+단점 : 많이 안 쓰인다.
+		
+		java.awt
+			만들기 쉽고 느리고 무겁다.
+		
+		java.swing
+			어렵고 빠르고 가볍다.
+	
+컨테이너(container)
+	다른 컴포넌트나 컨테이너들을 포함할수 있는 창
+	Frame, Panel, JFrame, JPanel
+
+컴포넌트(Component)
+	버튼, 텍스트, 스크롤 등 창 위에 올라가는 모든 요소들
+
+이벤트(Event)
+	GUI상에서 일어날 수 있는 모든 액션들
+
+배치관리자(Layout)
+	컨테이너에는 하나의 배치관리자(Layout)가 존재하며 삽입되는
+	컴포넌트의 위치와 크기를 결정하고 적절히 배치한다.
+
+	borderLayout
+	FlowLayout
+	GridLayout
+	CardLayout
+
+배치관리자를 null로 줄시에 우리가 하나하나 위치와 크기를 설정해 주어야 해서
+하드코딩이 일어나게 되고 불편하다. 따라서 market에서 제공하는
+툴을 사용한다.(window Builder)
+
+Help > Eclipse marketplace > window 검색 > windowBuilder 설치
+
+자바 GUI는 안드로이드 스튜디오와 유사
+
+JDBC ( DB-JAVA 연동 )
+
+장점 : 많이 쓰인다.
+단점 : 눈에보이는 부분은 콘솔에서밖에 없다.
+
+DBMS(Database Management System)
+	데이터베이스 관리 시스템
+	오라클, mySql, MariaDB, ...
+
+DDL	: 테이블 생성 등에 관련된 명령어
+DML	: 데이터 관리에 관련된 명령어
+
+DCL
+TCL
+
+테이블
+	데이터들을 일정한 틀에 맞춰서 저장하는 공간
+	표 형식 
+
+	UserDB.txt >> user Table
+	ProductDB.txt >> product Table
+
+	CREATE , ALTER , DROP
+
+데이터 관리
+	테이블에 데이터를 추가	INSERT
+	테이블에서 데이터를 읽기	READ
+	테이블에 있는 데이터 수정	UPDATE
+	테이블에서 데이터 지우기	DELETE
+
+쿼리문( 오라클 명령어 )을 CMD 환경에서 작성하기에는 불편하고 가독성이 떨어진다.
+따라서 Eclipse 내부에 있는 툴을 이용한다.
+
+Help > Eclipse marketplace > Dbeaver 검색 > Community 버전 설치
+>경고창 뜨면 Install anyway
+
+DTO > TAble > View > DAO > DBConnection
+
+
+

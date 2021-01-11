@@ -1,0 +1,14 @@
+package test;
+
+import java.util.Scanner;
+
+public class Test {
+		public static void main(String[] args) {
+				System.out.println(f());
+				}
+			
+			public static float f() {
+				return 3.14f;	
+			}
+	
+}
