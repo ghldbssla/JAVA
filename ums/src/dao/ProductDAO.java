@@ -19,10 +19,8 @@ public class ProductDAO {
 	}
 	public void addProduct(ProductDTO newProd) {
 		String sql = "INSERT INTO TBL_PRODUCT VALUES(?,?,?,?,?,?,?)";
-		System.out.println(newProd.toString());
 		try {
 			pstm = conn.prepareStatement(sql);
-			System.out.println(getCnt());
 			pstm.setInt(1, newProd.getProdnum());
 			pstm.setString(2, newProd.getProdname());
 			pstm.setInt(3, newProd.getProdprice());
@@ -64,34 +62,92 @@ public class ProductDAO {
 		return result;
 	}
 	public String getList() {
-		String userid = Session.get("session_id");
-		HashSet<String> rs = conn.select(6, userid);
-		String result="";
-		for(String line : rs) {
-			String[] datas = line.split("\t");
-			result += datas[0]+". "+datas[1]+" - "+datas[2]+
+		/*
+		 * result += datas[0]+". "+datas[1]+" - "+datas[2]+
 					"원("+datas[3]+"개)\n설명 : "+datas[4]+"\n";
-		}
-		return result;
-	}
-	public ArrayList<String> getAllProd(){
-		ArrayList<String> result = new ArrayList<>();
+
+		 * 
+		 */
+		String sql = "SELECT * FROM TBL_PRODUCT WHERE USERID=? ORDER BY PRODNUM";
 		String userid = Session.get("session_id");
-		HashSet<String> rs = conn.select(6, userid);
-		if(rs.size()!=0 && rs!=null) {
-			for(String line : rs) {
-				result.add(line.split("\t")[0]);
+		String result = "";
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, userid);
+			rs=pstm.executeQuery();
+			while(rs.next()) {
+				result+=rs.getInt(1)+". "+rs.getString(2)+" - "+rs.getInt(3)+
+						"원("+rs.getInt(4)+"개)\n설명 : "+rs.getString(5)+"\n"; 
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		} finally {
+			try {
+				rs.close();
+				pstm.close();
+			} catch (SQLException e) {
+				System.out.println("알 수 없는 오류");
 			}
 		}
 		return result;
 	}
-	public void updateProduct(String prodnum,int idx,String newData) {
-		conn.update(prodnum, idx, newData);
+	
+//	public ArrayList<String> getAllProd(){
+//		ArrayList<String> result = new ArrayList<>();
+//		String userid = Session.get("session_id");
+//		HashSet<String> rs = conn.select(6, userid);
+//		if(rs.size()!=0 && rs!=null) {
+//			for(String line : rs) {
+//				result.add(line.split("\t")[0]);
+//			}
+//		}
+//		return result;
+//	}
+	public void updateProduct(int prodnum,int idx,String newData) {
+		String[] columns = {"","PRODNAME","PRODPRICE"};
+		String sql = "UPDATE TBL_PRODUCT SET "+columns[idx]+"= ? WHERE PRODNUM=?";
+		try {
+			pstm=conn.prepareStatement(sql);
+			pstm.setString(1, newData);
+			pstm.setInt(2, prodnum);
+			pstm.executeQuery();
+		} catch (SQLException e) {
+			System.out.println(e);
+		} finally {
+			try {
+				pstm.close();
+			} catch (SQLException e) {
+				System.out.println("알 수 없는 오류");
+			}
+		}
+		
 	}
-	public boolean deleteProduct(String prodnum) {
-		return conn.delete(prodnum);		
+	public boolean deleteProduct(int prodnum) {
+		String sql = "DELETE FROM TBL_PRODUCT WHERE PRODNUM=?";
+		int result = 0;
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, prodnum);
+			result = pstm.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e);
+		} finally {
+			try {
+				pstm.close();
+			} catch (SQLException e) {
+				System.out.println("알 수 없는 오류");
+			}
+		}
+		return result==1;
 	}
 }
+
+
+
+
+
+
+
 
 
 

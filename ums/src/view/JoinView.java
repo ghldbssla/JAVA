@@ -36,9 +36,11 @@ public class JoinView {
 			if (result == -1) {
 				// 비밀번호 문제
 				System.out.println("비밀번호는 8자리 이상이어야 합니다. 다시 시도해 주세요.");
-			} else {
+			} else if(result == 1) {
 				System.out.println("회원가입 성공!");
 				System.out.println(userid + "님 가입을 환영합니다.");
+			} else {
+				System.out.println("??????");
 			}
 		}
 

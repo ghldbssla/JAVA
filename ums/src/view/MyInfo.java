@@ -34,10 +34,6 @@ public class MyInfo {
 			String userpw = sc.next();
 			if(udao.leaveId(userpw)) {
 				System.out.println("이용해 주셔서 감사합니다.");
-				ArrayList<String> arNum = pdao.getAllProd();
-				for(String prodnum : arNum) {
-					pdao.deleteProduct(prodnum);
-				}
 				Session.put("session_id", null);
 			}else {
 				System.out.println("비밀번호가 잘못되었습니다. 다시 시도해 주세요.");

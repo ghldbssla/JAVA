@@ -7,7 +7,7 @@ import dao.Session;
 import dto.UserDTO;
 
 public class Main {
-	public Main(UserDTO session) {
+	public Main() {
 		ProductDAO pdao = new ProductDAO();
 		Scanner sc = new Scanner(System.in);
 		if (Session.get("session_id") == null) {
@@ -34,7 +34,7 @@ public class Main {
 					System.out.println(pdao.getList());
 					
 					System.out.print("수정할 상품 번호 : ");
-					String prodnum = sc.next();
+					int prodnum = sc.nextInt();
 					System.out.print("새로운 데이터 : ");
 					String newData = sc.next();
 					// idx가 2라는 뜻은 2번째 방을 수정하겠다는 뜻이기 때문에, 가격수정을 의미한다.
@@ -46,7 +46,7 @@ public class Main {
 					// 상품삭제
 					System.out.println(pdao.getList());
 					System.out.println("삭제할 상품 번호 : ");
-					prodnum = sc.next();
+					prodnum = sc.nextInt();
 					if (pdao.deleteProduct(prodnum)) {
 						System.out.println(prodnum + "번 상품 삭제 완료!");
 					}
